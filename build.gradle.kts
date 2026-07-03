@@ -10,6 +10,10 @@ plugins {
 group = providers.gradleProperty("group").get()
 version = providers.gradleProperty("version").get()
 
+intellijPlatform {
+    buildSearchableOptions = false
+}
+
 repositories {
     maven {url = uri("c:\\Repository\\#idea_plugins\\local-repo")}
 //    maven {url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-dependencies")}
@@ -22,8 +26,6 @@ repositories {
 }
 
 dependencies {
-    // Source: https://mvnrepository.com/artifact/com.jetbrains.intellij.java/java-compiler-ant-tasks
-    implementation("com.jetbrains.intellij.java:java-compiler-ant-tasks:252.28539.13")
     testImplementation("junit:junit:4.13.2")
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
